@@ -24,4 +24,24 @@
     <string name="kode2">Kode waena 2</string>
     <string name="kode3">Kode warna 3</string>
     <string name="kode4">Kode warna 4</string>
+    <string name="converter">Pixel Converter</string>
+    <string name="titlepallete">Koleksi Pallete</string>
+    <string name="tambah_pallete">Tambah palet</string>
+
+    <string name="kembali">Kembali</string>
+    <string name="simpan">Simpan</string>
+    <string name="edit">Ubah Palet</string>
+    <string name="Upload">Upload Gambar</string>
+    <string name="save">Simpan</string>
+    <string name="Judul">Judul</string>
+    <string name="invalid"> Data tidak boleh kosong</string>
+    <string name="lainnya">Opsi lainnya</string>
+    <string name="hapus">Hapus Pallete</string>
+    <string name="pesan_hapus">Hapus catatan ini?</string>
+    <string name="tombol_hapus">Hapus</string>
+    <string name="tombol_batal">Batal</string>
+    <string name="list">Tampilan list</string>
+    <string name="grid">Tampilan grid</string>
+
+
 </resources>

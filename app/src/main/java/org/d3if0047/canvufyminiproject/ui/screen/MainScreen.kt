@@ -1,7 +1,6 @@
 package org.d3if0047.canvufyminiproject.ui.screen
 
 import android.content.res.Configuration
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,9 +10,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
@@ -31,6 +33,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -49,31 +52,29 @@ import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+
 fun Mainscreen(navController: NavHostController){
     Scaffold(
         topBar = {
             TopAppBar(
+                navigationIcon = {
+                    IconButton(onClick = {navController.popBackStack()}) {
+                        Icon(
+                            imageVector = Icons.Filled.ArrowBack ,
+                            contentDescription = stringResource(R.string.Kembali),
+                            tint = Color.White)
+                    }
+                },
                 title = {
-                    Text(text = stringResource(id = R.string.app_name))
+                    Text(text = stringResource(id = R.string.converter))
                 },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = Color.Black,
                     titleContentColor = Color.White,
                 ),
-                actions = {
-                    IconButton(
-                        onClick = {navController.navigate(Screen.Pallete.route)
-                        }
-                    ) {
-                        Image(
-                            painter = painterResource(id = R.drawable.pallete),
-                            contentDescription = stringResource(R.string.tentang_aplikasi),
-                            modifier = Modifier.padding(8.dp)
-                        )
-                    }
-                }
 
-            )
+
+                )
         }
     ){ padding ->
         Column(
@@ -105,6 +106,7 @@ fun PixelToCmConverter() {
     var errorMessage by remember { mutableStateOf<String?>(null) }
     var showErrorOnAction by remember { mutableStateOf(false) }
     val context = LocalContext.current
+
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -161,7 +163,7 @@ fun PixelToCmConverter() {
                     }
                 },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Black,
+                    containerColor = colorResource(id = R.color.lavender),
                     contentColor = Color.White
                 )
             ) {
@@ -179,7 +181,7 @@ fun PixelToCmConverter() {
                     showErrorOnAction = false
                 },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Black,
+                    containerColor = colorResource(id = R.color.pink),
                     contentColor = Color.White
                 )
             ) {

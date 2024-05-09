@@ -19,9 +19,9 @@
     <string name="bagikan">Share</string>
 
     <string name="Kembali">back</string>
-
+    <string name="converter">Pixel Converter</string>
     <string name="tentang_aplikasi">About Apps</string>
-
+    <string name="titlepallete">Pallate Collections</string>
 
     <string name="Hasil">Value in Centimeters: %.3f cm</string>
     <string name="bagikan_template">Hi, I have a color palette recommendation for you :):</string>
@@ -30,4 +30,19 @@
     <string name="kode2">Color code 2</string>
     <string name="kode3">Color code 3</string>
     <string name="kode4">Color code 4</string>
+    <string name="Upload">Upload Image</string>
+    <string name="save">Save</string>
+    <string name="Judul">Title</string>
+    <string name="tambah_pallete">Add your palette</string>
+    <string name="kembali">Kembali</string>
+    <string name="simpan">Simpan</string>
+    <string name="edit">Change your palette</string>
+    <string name="invalid"> Data cannot be empty</string>
+    <string name="lainnya">Another Options</string>
+    <string name="hapus">Delete Pallete</string>
+    <string name="pesan_hapus">Delete this Pallete?</string>
+    <string name="tombol_hapus">Delete</string>
+    <string name="tombol_batal">No</string>
+    <string name="list">list View</string>
+    <string name="grid">grid View</string>
 </resources>
