@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">CanvufyMiniproject</string>
+    <string name="app_name">Canvify</string>
+    <string name="pallete">Palet</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="error1">Harap masukkan angka yang valid</string>
+    <string name="error2">masukkan nilai pixel terlebih dahulu!</string>
+    <string name="Hasil">Nilai dalam Centimeter: %.3f cm</string>
+    <string name="perintah">Masukkan nilai pixel</string>
+    <string name="judul">Ubah Pixel ke Centimeter</string>
+    <string name="clear">Hapus</string>
+    <string name="convert">Ubah</string>
+    <string name="list_kosong">Belum ada data</string>
+    <string name="x_diklik">%1$s diklik!</string>
+    <string name="tambah_catatan">Tambah pallete</string>
+    <string name="tambah_error">Belum bisa tambah palet</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="Kembali">Kembali</string>
+    <string name="input_value">Masukkan nilai pixel</string>
+    <string name="bulatkan">Bulatkan</string>
+    <string name="bagikan_template">Haii aku ada rekomendasi warna palet untukmu :)</string>
+    <string name="name">Nama</string>
+    <string name="kode1">Kode warna 1</string>
+    <string name="kode2">Kode waena 2</string>
+    <string name="kode3">Kode warna 3</string>
+    <string name="kode4">Kode warna 4</string>
 </resources>

@@ -9,7 +9,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import org.d3if0047.canvufyminiproject.navigation.SetupNavGraph
 import org.d3if0047.canvufyminiproject.ui.theme.CanvufyMiniprojectTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,27 +22,11 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = Color.Black
                 ) {
-                    Greeting("Android")
+                    SetupNavGraph()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CanvufyMiniprojectTheme {
-        Greeting("Android")
     }
 }
