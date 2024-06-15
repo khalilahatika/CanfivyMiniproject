@@ -8,7 +8,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import org.d3if0047.canvufyminiproject.ui.screen.AboutApp
-import org.d3if0047.canvufyminiproject.ui.screen.AddMomentScreen
 import org.d3if0047.canvufyminiproject.ui.screen.HomeScreen
 
 
@@ -25,6 +24,6 @@ fun NavGraph(
     ) {
         composable(Screen.Home.route) { HomeScreen(navController) }
         composable(Screen.About.route) { AboutApp(navController) }
-        composable(Screen.AddMoment.route) { AddMomentScreen(navController) }
+
     }
 }

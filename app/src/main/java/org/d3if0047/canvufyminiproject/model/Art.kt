@@ -7,7 +7,7 @@ data class Art(
     val alamat: String,
     val harga: String,
     val gambar: String,
-
+    val auth: String
 
 )
 

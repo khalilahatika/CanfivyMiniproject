@@ -14,5 +14,20 @@
     <string name="try_again">Coba lagi</string>
     <string name="tutup">Tutup</string>
     <string name="logout">Keluar</string>
+    <string name="tambah_gallery">Tambah art</string>
+    <string name="tambah_btn">Tambah art</string>
+    <string name="nama">Nama Galery seni</string>
+    <string name="simpan">Simpan</string>
+    <string name="batal">Batal</string>
+    <string name="hapus">Hapus</string>
+    <string name="grid">Grid</string>
+    <string name="list">List</string>
+    <string name="tambah_art">Tambah</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="deskripsi">Bagikan</string>
+    <string name="alamat">Bagikan</string>
+    <string name="harga">Bagikan</string>
+    <string name="template_bagikan">HAII, aku ada tempat seni baguss!!</string>
+
     <string name="descapp">Art Gallery merupakan aplikasi untuk mengabadikan moment kalian saat mengunjungi beberapa galeri seni. Art Gallery dapat menyimpan Foto, deskripsi, alamat dan juga harga masuk dari galeri seni nya.</string>
 </resources>
