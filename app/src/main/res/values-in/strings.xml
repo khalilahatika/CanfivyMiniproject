@@ -8,6 +8,9 @@
     <string name="Hasil">Nilai dalam Centimeter: %.3f cm</string>
     <string name="perintah">Masukkan nilai pixel</string>
     <string name="judul">Ubah Pixel ke Centimeter</string>
+    <string name="judul_pixelcm">Ubah Centimeter ke Pixel</string>
+    <string name="judul_pixelmm">Ubah Milimeter ke Pixel</string>
+
     <string name="clear">Hapus</string>
     <string name="convert">Ubah</string>
     <string name="list_kosong">Belum ada data</string>
@@ -24,4 +27,13 @@
     <string name="kode2">Kode waena 2</string>
     <string name="kode3">Kode warna 3</string>
     <string name="kode4">Kode warna 4</string>
+    <string name="Hasil_cm">Result: %.2f cm</string>
+    <string name="Hasil_mm">Result: %.2f mm</string>
+    <string name="convert_to_cm">Cm ke Pixel</string>
+    <string name="convert_to_mm">Mm ke Pixel</string>
+    <string name="input_value_cm">nilai cm</string>
+    <string name="input_value_mm">nilai mm</string>
+    <string name="Hasil_pixel">Result: %.2f Pixel</string>
+
+
 </resources>

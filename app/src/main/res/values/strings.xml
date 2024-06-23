@@ -19,9 +19,16 @@
     <string name="bagikan">Share</string>
 
     <string name="Kembali">back</string>
-
+    <string name="judul_pixelcm">Convert Centimeter to Pixel</string>
+    <string name="judul_pixelmm">Convert Milimeter to Pixel</string>
     <string name="tentang_aplikasi">About Apps</string>
-
+    <string name="Hasil_cm">Result: %.2f cm</string>
+    <string name="Hasil_mm">Result: %.2f mm</string>
+    <string name="convert_to_cm">Cm to Pixel</string>
+    <string name="convert_to_mm">Mm to Pixel</string>
+    <string name="input_value_cm">Cm value</string>
+    <string name="input_value_mm">Mm value</string>
+    <string name="Hasil_pixel">Result: %.2f Pixel</string>
 
     <string name="Hasil">Value in Centimeters: %.3f cm</string>
     <string name="bagikan_template">Hi, I have a color palette recommendation for you :):</string>

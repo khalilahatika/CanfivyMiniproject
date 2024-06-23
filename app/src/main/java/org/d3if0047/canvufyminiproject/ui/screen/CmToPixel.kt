@@ -1,3 +1,6 @@
+package org.d3if0047.canvufyminiproject.ui.screen
+
+
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -9,10 +12,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -44,32 +50,28 @@ import org.d3if0047.canvufyminiproject.navigation.Screen
 import org.d3if0047.canvufyminiproject.ui.theme.CanvufyMiniprojectTheme
 import kotlin.math.roundToInt
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Mainscreen(navController: NavHostController){
+fun CmToPixel(navHostController: NavHostController){
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
                     Text(text = stringResource(id = R.string.app_name))
                 },
+                navigationIcon = {
+                    IconButton(onClick = {navHostController.popBackStack()}) {
+                        Icon(
+                            imageVector = Icons.Filled.ArrowBack ,
+                            contentDescription = stringResource(R.string.Kembali),
+                            tint = Color.White)
+                    }
+                },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = Color.Black,
                     titleContentColor = Color.White,
                 ),
-                actions = {
-                    IconButton(
-                        onClick = {navController.navigate(Screen.Pallete.route)
-                        }
-                    ) {
-                        Image(
-                            painter = painterResource(id = R.drawable.pallete),
-                            contentDescription = stringResource(R.string.tentang_aplikasi),
-                            modifier = Modifier.padding(8.dp)
-                        )
-                    }
-                }
+
 
             )
         }
@@ -82,24 +84,21 @@ fun Mainscreen(navController: NavHostController){
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = stringResource(id = R.string.judul),
+                text = stringResource(id = R.string.judul_pixelcm),
                 style = TextStyle(
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp
                 ),
                 modifier = Modifier.padding(bottom = 16.dp)
             )
-            PixelConverter()
-            ConversionOptions(navController)
+            CmToPixelScreen()
         }
     }
 }
-
 @Composable
-fun PixelConverter() {
-    var pixelText by rememberSaveable { mutableStateOf("") }
-    var cmValue by rememberSaveable { mutableStateOf(0f) }
-    var mmValue by rememberSaveable { mutableStateOf(0f) }
+fun CmToPixelScreen() {
+    var cmText by rememberSaveable { mutableStateOf("") }
+    var pixelValue by rememberSaveable { mutableStateOf(0f) }
     var roundValue by rememberSaveable { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
     val context = LocalContext.current
@@ -109,16 +108,16 @@ fun PixelConverter() {
         modifier = Modifier.padding(16.dp)
     ) {
         TextField(
-            value = pixelText,
+            value = cmText,
             onValueChange = {
                 if (it.all { char -> char.isDigit() || char == '.' }) {
-                    pixelText = it
+                    cmText = it
                     errorMessage = null
                 } else {
                     errorMessage = context.getString(R.string.error1)
                 }
             },
-            label = { Text(text = stringResource(R.string.input_value))},
+            label = { Text(text = stringResource(R.string.input_value_cm)) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             isError = errorMessage != null,
             singleLine = true
@@ -148,14 +147,13 @@ fun PixelConverter() {
         Row {
             Button(
                 onClick = {
-                    if (pixelText.isEmpty()) {
+                    if (cmText.isEmpty()) {
                         errorMessage = context.getString(R.string.error2)
                         return@Button
                     }
-                    val pixels = pixelText.toFloatOrNull()
-                    pixels?.let {
-                        cmValue = convertPixelToCm(pixels, roundValue)
-                        mmValue = convertPixelToMm(pixels, roundValue)
+                    val cm = cmText.toFloatOrNull()
+                    cm?.let {
+                        pixelValue = convertCmToPixel(cm, roundValue)
                     }
                 },
                 colors = ButtonDefaults.buttonColors(
@@ -171,9 +169,8 @@ fun PixelConverter() {
             Button(
                 onClick = {
                     // Clear data
-                    pixelText = ""
-                    cmValue = 0f
-                    mmValue = 0f
+                    cmText = ""
+                    pixelValue = 0f
                     errorMessage = null
                 },
                 colors = ButtonDefaults.buttonColors(
@@ -187,63 +184,24 @@ fun PixelConverter() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Text(text = stringResource(id = R.string.Hasil_cm, cmValue))
-        Text(text = stringResource(id = R.string.Hasil_mm, mmValue))
-
+        Text(text = stringResource(id = R.string.Hasil_pixel, pixelValue))
     }
 }
 
-fun convertPixelToCm(pixels: Float, round: Boolean): Float {
-    val cmPerPixel = 0.026458333f
-    var result = pixels * cmPerPixel
+fun convertCmToPixel(cm: Float, round: Boolean): Float {
+    val pixelPerCm = 37.795275591f
+    var result = cm * pixelPerCm
     if (round) {
         result = result.roundToInt().toFloat()
     }
     return result
 }
 
-fun convertPixelToMm(pixels: Float, round: Boolean): Float {
-    val mmPerPixel = 0.26458333f
-    var result = pixels * mmPerPixel
-    if (round) {
-        result = result.roundToInt().toFloat()
-    }
-    return result
-}
-@Composable
-fun ConversionOptions(navController: NavHostController) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(16.dp)
-    ) {
-        Button(
-            onClick = { navController.navigate(Screen.CmToPixel.route) },
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color.Black,
-                contentColor = Color.White
-            )
-        ) {
-            Text(stringResource(id = R.string.convert_to_cm))
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Button(
-            onClick = { navController.navigate(Screen.MmToPixel.route) },
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color.Black,
-                contentColor = Color.White
-            )
-        ) {
-            Text(stringResource(id = R.string.convert_to_mm))
-        }
-    }
-}
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 fun ScreenPreview() {
     CanvufyMiniprojectTheme {
-        Mainscreen(rememberNavController())
+        CmToPixel(rememberNavController())
     }
 }
