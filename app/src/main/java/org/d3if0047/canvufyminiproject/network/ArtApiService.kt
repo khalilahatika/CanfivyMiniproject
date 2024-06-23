@@ -40,10 +40,10 @@ interface ArtApiService {
     @Multipart
     @POST("json.php")
     suspend fun postArt(
-        @Part("auth") userId: String,
-        @Part("deskripsi") deskripsi: RequestBody,
-        @Part("alamat") alamat: RequestBody,
-        @Part("harga") harga: RequestBody,
+        @Part("auth")userId: String,
+        @Part("deskripsi")deskripsi: RequestBody,
+        @Part("alamat")alamat: RequestBody,
+        @Part("harga")harga: RequestBody,
         @Part image: MultipartBody.Part
     ): OpStatus
 

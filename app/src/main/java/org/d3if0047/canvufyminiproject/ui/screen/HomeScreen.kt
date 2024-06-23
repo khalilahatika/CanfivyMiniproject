@@ -363,20 +363,20 @@ fun ListItem(
                     Text(
                         text = art.deskripsi,
                         fontWeight = FontWeight.Bold,
-                        color = Color.White
+                        color = Color.Black
                     )
                     Row {
                         Text(
                             text = stringResource(R.string.alamat),
                             fontStyle = FontStyle.Italic,
                             fontSize = 10.sp,
-                            color = Color.White
+                            color = Color.Black
                         )
                         Text(
                             text = " ${art.alamat}",
                             fontStyle = FontStyle.Italic,
                             fontSize = 10.sp,
-                            color = Color.White
+                            color = Color.Black
                         )
                     }
                     Row {
@@ -384,13 +384,13 @@ fun ListItem(
                             text = stringResource(R.string.harga),
                             fontStyle = FontStyle.Italic,
                             fontSize = 10.sp,
-                            color = Color.White
+                            color = Color.Black
                         )
                         Text(
                             text = " ${art.harga}",
                             fontStyle = FontStyle.Italic,
                             fontSize = 10.sp,
-                            color = Color.White
+                            color = Color.Black
                         )
 
                     }
