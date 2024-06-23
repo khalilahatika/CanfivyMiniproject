@@ -131,24 +131,22 @@ fun PalleteScreen(navController: NavHostController){
 
         )
     { padding ->
-
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            ScreenContent(showList,Modifier.padding(padding),navController)
+            ScreenContent(showList, Modifier.padding(padding), navController)
             FloatingActionButton(
                 onClick = {
                     navController.navigate(Screen.FormBaru.route)
                 },
-
-                modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 26.dp),
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(16.dp),
                 containerColor = colorResource(id = R.color.lavender),
                 contentColor = Color.White
-
             ) {
                 Icon(
                     imageVector = Icons.Filled.Add,
-                    contentDescription = stringResource(R.string.tambah_catatan),
-
-                    )
+                    contentDescription = stringResource(R.string.tambah_catatan)
+                )
             }
         }
     }
