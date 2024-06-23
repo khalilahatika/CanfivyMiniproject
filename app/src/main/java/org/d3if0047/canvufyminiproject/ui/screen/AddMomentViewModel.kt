@@ -35,8 +35,9 @@ class AddMomentViewModel : ViewModel() {
             try {
                 data.value = ArtApi.service.getArt(userId)
                 status.value = ApiStatus.SUCCESS
+
             } catch (e: Exception) {
-                Log.d("AddMomentViewModel", "Failure: ${e.message}")
+                Log.e("AddMomentViewModel", "Failure: ${e.message}")
                 status.value = ApiStatus.FAILED
             }
         }
@@ -91,6 +92,7 @@ class AddMomentViewModel : ViewModel() {
         return MultipartBody.Part.createFormData(
             "image", "image.jpg", requestBody)
     }
+
 
     fun clearMessage() { errorMessage.value=null}
 }

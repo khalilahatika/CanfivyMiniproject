@@ -18,7 +18,6 @@ import retrofit2.http.POST
 import retrofit2.http.Part
 import retrofit2.http.Query
 
-// Ensure the BASE_URL ends with a slash
 private const val BASE_URL = "https://khalilaatika.my.id/"
 
 private val moshi = Moshi.Builder()
@@ -40,11 +39,11 @@ interface ArtApiService {
     @Multipart
     @POST("json.php")
     suspend fun postArt(
-        @Part("auth")userId: String,
-        @Part("deskripsi")deskripsi: RequestBody,
-        @Part("alamat")alamat: RequestBody,
-        @Part("harga")harga: RequestBody,
-        @Part image: MultipartBody.Part
+        @Part("auth") userId: String,
+        @Part("deskripsi") deskripsi: RequestBody,
+        @Part("alamat") alamat: RequestBody,
+        @Part("harga") harga: RequestBody,
+        @Part gambar: MultipartBody.Part
     ): OpStatus
 
     @DELETE("json.php")
@@ -59,8 +58,8 @@ object ArtApi {
     val service: ArtApiService by lazy {
         retrofit.create(ArtApiService::class.java)
     }
-    fun getArtUrl(image: String): String {
-        return "$BASE_URL$image"
+    fun getArtUrl(gambar: String): String {
+        return "$BASE_URL$gambar"
     }
 }
 
